@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -46,8 +45,4 @@ public class FirstDataSourceConfig {
         return new JpaTransactionManager(entityManagerFactory);
     }
 
-    @Bean(name = "firstJdbcTemplate")
-    public JdbcTemplate firstTemplate(@Qualifier("firstDataSource") DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
-    }
 }

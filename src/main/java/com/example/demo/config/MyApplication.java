@@ -1,4 +1,4 @@
-package com.example.demo.component;
+package com.example.demo.config;
 
 import com.example.demo.MultiSourceApplication;
 import com.example.demo.service.CopyDataService;
